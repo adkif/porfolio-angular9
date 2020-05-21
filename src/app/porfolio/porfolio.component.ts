@@ -11,6 +11,7 @@ import { Project } from '../classes/project';
   styleUrls: ['./porfolio.component.scss']
 })
 export class PorfolioComponent implements OnInit {
+
   porfolio: Porfolio = new Porfolio(
     'BIKANABA',
     'KIFUNGO',
@@ -21,6 +22,8 @@ export class PorfolioComponent implements OnInit {
     'I studied Electrical and Computer Engineering at the Université Libre des Pays des Grands Lacs, and currently work in freelancing.' +
     'You can reach me by email at akifungo@gmail.com​ Or on twitter @Adolphekifungo Or simply on my Whatsapp I love answering questions'
   );
+
+  isLoading = false;
 
   constructor(private projectService: ProjectService) { }
 
@@ -79,14 +82,14 @@ export class PorfolioComponent implements OnInit {
     this.porfolio.addSkill(
       new Skill(
         'Programming',
-        90
+        80
       )
     );
 
     this.porfolio.addSkill(
       new Skill(
         '3D Modeling',
-        80
+        70
       )
     );
   }
@@ -106,6 +109,7 @@ export class PorfolioComponent implements OnInit {
               project.html_url,
               project.language));
           });
+          this.isLoading = true;
         }
       );
   }
