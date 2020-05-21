@@ -1,0 +1,182 @@
+<mat-toolbar color="primary">
+    <div>
+        {{ porfolio.getSurname() }} {{ porfolio.getLastname()}}
+    </div>
+</mat-toolbar>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mt-3">
+            <h2>{{ porfolio.getDescription() }}</h2>
+            <div class="d-flex flex-row">
+                <figure *ngFor="let media of porfolio.getMedias()">
+                    <a href="{{ media.getlink() }}">
+                        <img class="icon-custom mr-3" src="{{ media.getImg() }}" alt="{{ media.getTag() }}">
+                    </a>
+                </figure>
+            </div>
+            <a href="#about" class="text-decoration-none"><button mat-raised-button color="primary"><mat-icon>arrow_right_alt</mat-icon>Let's meet</button></a>
+        </div>
+        <div class="col-md-6 mt-3">
+            <img class="w-100" src="./assets/images/manOnTable.52be3144.svg">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h1>Open source projects</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-md-6 mt-3" *ngFor="let project of porfolio.getProjects()">
+            <a href="{{ project.getUrl() }}" class="text-decoration-none">
+                <mat-card>
+                    <mat-card-header>
+                        <mat-card-subtitle>
+                            {{ project.getName() }}
+                        </mat-card-subtitle>
+                    </mat-card-header>
+                    <mat-card-content>
+                        {{ project.getDescription() }}
+                        <div class="row mt-1">
+                            <div class="col-4 d-flex flex-row">
+                                <mat-icon>code</mat-icon>{{ project.getLanguage() }}
+                            </div>
+                            <div class="col-4 d-flex align-baseline">
+                                &#9733;{{ project.getStar() }}
+                            </div>
+                            <div class="col-4 d-flex align-baseline">
+                                <mat-icon>call_split</mat-icon>{{ project.getForks() }}
+                            </div>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </a>
+        </div>
+    </div>
+    <div class="row" id="about">
+        <div class="col mt-3">
+            <h1>About me</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <p>{{ porfolio.getAbout() }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 mt-3">
+            <img class="w-100" src="./assets/images/developerActivity.59389695.svg">
+        </div>
+        <div class="col-md-6 mt-3">
+            <h1>Proficiency's</h1>
+            <div *ngFor="let skill of porfolio.getSkills()" class="mt-3">
+                <p>{{ skill.getTag() }}</p>
+                <mat-progress-bar mode="determinate" value="{{ skill.getLevel() }}"></mat-progress-bar>
+            </div>
+            <button mat-raised-button class="mt-3"><mat-icon>vertical_align_bottom</mat-icon>Download my resume</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mt-3">
+            <h1>My web stack</h1>
+            <p>I'm a full-Stack developper in MERN and MEAN stack and user for Jest testing tool, 'cause is cool!😉</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 col-4 mt-3">
+            <img class="icon-custom w-50" src="./assets/images/angular.svg" />
+        </div>
+        <div class="col-md-2 col-4 mt-3">
+            <img class="icon-custom w-50" src="./assets/images/mysql.svg" />
+        </div>
+        <div class="col-md-2 col-4 mt-3">
+            <img class="icon-custom w-50" src="./assets/images/mongodb.svg" />
+        </div>
+        <div class="col-md-2 col-4 mt-3">
+            <img class="icon-custom w-50" src="./assets/images/node-dot-js.svg" />
+        </div>
+        <div class="col-md-2 col-4 mt-3">
+            <img class="icon-custom w-50" src="./assets/images/jest.svg" />
+        </div>
+        <div class="col-md-2 col-4 mt-3">
+            <img class="icon-custom w-50" src="./assets/images/react.svg" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mt-3">
+            <h1>Operating system</h1>
+            <p>Natively, I work on UNIX machine otherwise Ubuntu, server and desktop and MacOS for coding. I use windows for 3D CAD simulations and implementing windows server. </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 col-4 mt-3">
+            <img class="icon-custom w-50" src="./assets/images/linux.svg" />
+        </div>
+        <div class="col-md-2 col-4 mt-3">
+            <img class="icon-custom w-50" src="./assets/images/debian.svg" />
+        </div>
+        <div class="col-md-2 col-4 mt-3">
+            <img class="icon-custom w-50" src="./assets/images/ubuntu.svg" />
+        </div>
+        <div class="col-md-2 col-4 mt-3">
+            <img class="icon-custom w-50" src="./assets/images/apple.svg" />
+        </div>
+        <div class="col-md-2 col-4 mt-3">
+            <img class="icon-custom w-50" src="./assets/images/windows.svg" />
+        </div>
+        <div class="col-md-2 col-4 mt-3">
+            <img class="icon-custom w-50" src="./assets/images/redhat.svg" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col mt-3">
+            <h1>Others knowledge</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2 col-4 mt-3">
+            <img class="icon-custom w-50" src="./assets/images/npm.svg" />
+        </div>
+        <div class="col-md-2 col-4 mt-3">
+            <img class="icon-custom w-50" src="./assets/images/postman.svg" />
+        </div>
+        <div class="col-md-2 col-4 mt-3">
+            <img class="icon-custom w-50" src="./assets/images/arduino.svg" />
+        </div>
+        <div class="col-md-2 col-4 mt-3">
+            <img class="icon-custom w-50" src="./assets/images/opensourceinitiative.svg" />
+        </div>
+        <div class="col-md-2 col-4 mt-3">
+            <img class="icon-custom w-50" src="./assets/images/heroku.svg" />
+        </div>
+        <div class="col-md-2 col-4 mt-3">
+            <img class="icon-custom w-50" src="./assets/images/amazonaws.svg" />
+        </div>
+        <div class="col-md-2 col-4 mt-3">
+            <img class="icon-custom w-50" src="./assets/images/mathworks.svg" />
+        </div>
+        <div class="col-md-2 col-4 mt-3">
+            <img class="icon-custom w-50" src="./assets/images/python.svg" />
+        </div>
+        <div class="col-md-2 col-4 mt-3">
+            <img class="icon-custom w-50" src="./assets/images/java.svg" />
+        </div>
+        <div class="col-md-2 col-4 mt-3 d-flex align-items-end">
+            <p>and more...</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h1>Let's work together</h1>
+            <p>If You have something interesting, shoot me an email or a whatsapp message.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="d-flex justify-content-center w-100">
+            <figure *ngFor="let media of porfolio.getMedias()">
+                <a href="{{ media.getlink() }}">
+                    <img class="icon-custom mr-3" src="{{ media.getImg() }}" alt="{{ media.getTag() }}">
+                </a>
+            </figure>
+        </div>
+    </div>
+</div>

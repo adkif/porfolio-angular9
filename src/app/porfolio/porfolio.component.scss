@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Reenie+Beanie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+mat-toolbar {
+    font-family: 'Reenie Beanie', cursive;
+    font-size: xx-large;
+}
+
+.container,
+mat-card,
+h1,
+h2 {
+    font-family: 'Nunito', sans-serif;
+}
+
+figure {
+    img {
+        width: 32px;
+    }
+}
+
+mat-card:hover {
+    box-shadow: 10px 10px 5px #aaaaaa;
+}
+
+.icon-custom:hover,
+.icon-custom:focus {
+    filter: invert(33%) sepia(100%) saturate(540%) hue-rotate(213deg) brightness(93%) contrast(94%);
+}
