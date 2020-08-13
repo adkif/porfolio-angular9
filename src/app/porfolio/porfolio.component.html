@@ -38,7 +38,7 @@
                             </mat-card-subtitle>
                         </mat-card-header>
                         <mat-card-content>
-                            {{ project.getDescription() }}
+                            {{ project.getDescription().substring(0, 8)}}
                             <div class="row mt-1">
                                 <div class="col-4 d-flex flex-row">
                                     <mat-icon>code</mat-icon>{{ project.getLanguage() }}
